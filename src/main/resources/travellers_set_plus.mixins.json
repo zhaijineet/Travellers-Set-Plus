@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "net.zhaiji.travellerssetplus.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "TravellersArmorItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
