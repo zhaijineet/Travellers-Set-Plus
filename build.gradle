@@ -41,6 +41,10 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    maven {
+        name = "Curios"
+        url = uri("https://maven.theillusivec4.top/")
+    }
 }
 
 base {
@@ -158,6 +162,9 @@ dependencies {
     implementation "team-twilight:twilightforest:4.8.3345:universal"
 
     runtimeOnly("mezz.jei:jei-1.21.1-neoforge:19.27.0.340")
+
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
+    compileOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

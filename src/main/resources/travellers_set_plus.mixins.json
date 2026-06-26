@@ -3,7 +3,20 @@
   "package": "net.zhaiji.travellerssetplus.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "TravellersArmorItemMixin"
+    "TravellersArmorItemMixin",
+    "curios.TravellersModifiersManagerMixin",
+    "curios.TravellersGearLogicMixin",
+    "curios.TravellersGearEventsMixin",
+    "curios.TravellersArmorBeltItemMixin",
+    "curios.CycleMapSlotPacketMixin",
+    "curios.PlayerHooksMixin",
+    "curios.MapHooksMixin",
+    "curios.TravellersGogglesItemMixin"
+  ],
+  "client": [
+    "TravellersClientEventsMixin",
+    "ItemDisplayOverlayMixin",
+    "curios.HumanoidArmorLayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
