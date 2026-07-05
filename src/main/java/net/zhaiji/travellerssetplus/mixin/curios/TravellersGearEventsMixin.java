@@ -26,7 +26,7 @@ public abstract class TravellersGearEventsMixin {
             target = "Lnet/minecraft/world/entity/LivingEntity;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private ItemStack travellerssetplus$wrapGetItemBySlot(LivingEntity entity, EquipmentSlot slot, Operation<ItemStack> original) {
+    private ItemStack travellerssetplus$getItemBySlot(LivingEntity entity, EquipmentSlot slot, Operation<ItemStack> original) {
         return CuriosMixinUtil.wrapGetItemBySlot(entity, slot, original);
     }
 }

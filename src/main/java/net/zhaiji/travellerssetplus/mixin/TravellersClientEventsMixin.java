@@ -30,7 +30,7 @@ public abstract class TravellersClientEventsMixin {
             target = "Lnet/minecraft/client/player/LocalPlayer;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private ItemStack travellerssetplus$wrapGetItemBySlotLocalPlayer(
+    private ItemStack travellerssetplus$getItemBySlot(
         LocalPlayer entity,
         EquipmentSlot slot,
         Operation<ItemStack> original
@@ -45,7 +45,7 @@ public abstract class TravellersClientEventsMixin {
             target = "Lnet/minecraft/world/entity/player/Player;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private ItemStack travellerssetplus$wrapGetItemBySlotPlayer(Player entity, EquipmentSlot slot, Operation<ItemStack> original) {
+    private ItemStack travellerssetplus$slowZoomSensitivity(Player entity, EquipmentSlot slot, Operation<ItemStack> original) {
         return CuriosMixinUtil.wrapGetItemBySlot(entity, slot, original);
     }
 
@@ -56,7 +56,7 @@ public abstract class TravellersClientEventsMixin {
             target = "Lnet/minecraft/client/player/AbstractClientPlayer;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private ItemStack travellerssetplus$wrapGetItemBySlotAbstractClientPlayer(
+    private ItemStack travellerssetplus$renderGlovesInFirstPerson(
         AbstractClientPlayer entity,
         EquipmentSlot slot,
         Operation<ItemStack> original

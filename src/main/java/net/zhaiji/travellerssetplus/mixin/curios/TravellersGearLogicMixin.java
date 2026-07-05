@@ -41,7 +41,7 @@ public abstract class TravellersGearLogicMixin {
             target = "Lnet/minecraft/world/entity/LivingEntity;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private static ItemStack travellerssetplus$wrapGetItemBySlot(LivingEntity entity, EquipmentSlot slot, Operation<ItemStack> original) {
+    private static ItemStack travellerssetplus$getItemBySlot(LivingEntity entity, EquipmentSlot slot, Operation<ItemStack> original) {
         return CuriosMixinUtil.wrapGetItemBySlot(entity, slot, original);
     }
 
@@ -49,7 +49,7 @@ public abstract class TravellersGearLogicMixin {
         method = "travellersGearAutoRepair",
         at = @At("RETURN")
     )
-    private static void travellerssetplus$autoRepairCurios(LivingEntity livingEntity, CallbackInfo callbackInfo) {
+    private static void travellerssetplus$travellersGearAutoRepair(LivingEntity livingEntity, CallbackInfo callbackInfo) {
         CuriosMixinUtil.autoRepairCurios(
             livingEntity,
             // 不要替换成方法引用，因为mixin类在运行时不存在

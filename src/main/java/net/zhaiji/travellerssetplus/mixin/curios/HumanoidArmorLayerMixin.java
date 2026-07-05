@@ -23,7 +23,7 @@ public abstract class HumanoidArmorLayerMixin {
             target = "Lnet/minecraft/world/entity/LivingEntity;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private ItemStack travellerssetplus$wrapRenderableGetItemBySlot(
+    private ItemStack travellerssetplus$renderArmorPiece(
         LivingEntity entity, EquipmentSlot slot, Operation<ItemStack> original
     ) {
         return CuriosMixinUtil.wrapRenderableGetItemBySlot(entity, slot, original);

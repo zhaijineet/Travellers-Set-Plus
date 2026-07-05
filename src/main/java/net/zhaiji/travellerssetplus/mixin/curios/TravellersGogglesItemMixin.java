@@ -21,7 +21,7 @@ public abstract class TravellersGogglesItemMixin {
         argsOnly = true,
         index = 4
     )
-    private int travellerssetplus$fixCuriosSlotId(int slotId) {
+    private int travellerssetplus$inventoryTick(int slotId) {
         return CuriosMixinUtil.fixGogglesSlotId(slotId);
     }
 }

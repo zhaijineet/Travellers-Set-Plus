@@ -21,7 +21,7 @@ public abstract class TravellersModifiersManagerMixin {
         at = @At("HEAD"),
         cancellable = true
     )
-    private static void travellerssetplus$checkCurios(
+    private static void travellerssetplus$getStackForGroup(
         LivingEntity livingEntity,
         EquipmentSlotGroup group,
         CallbackInfoReturnable<ItemStack> callbackInfo

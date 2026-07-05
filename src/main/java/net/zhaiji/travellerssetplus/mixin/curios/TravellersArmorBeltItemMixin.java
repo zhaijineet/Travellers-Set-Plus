@@ -22,7 +22,7 @@ public abstract class TravellersArmorBeltItemMixin {
             target = "Lnet/minecraft/world/entity/player/Inventory;getArmor(I)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private static ItemStack travellerssetplus$wrapGetArmor(
+    private static ItemStack travellerssetplus$travellersTrySwapHotbar(
         Inventory inventory, int slotIndex, Operation<ItemStack> original
     ) {
         return CuriosMixinUtil.wrapGetArmor(inventory, slotIndex, original);

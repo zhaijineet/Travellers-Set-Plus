@@ -23,7 +23,7 @@ public abstract class MapHooksMixin {
             target = "Lnet/minecraft/world/entity/player/Player;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private static ItemStack travellerssetplus$wrapGetItemBySlot(Player player, EquipmentSlot slot1, Operation<ItemStack> original) {
+    private static ItemStack travellerssetplus$updateMapsInGoggles(Player player, EquipmentSlot slot1, Operation<ItemStack> original) {
         return CuriosMixinUtil.wrapGetItemBySlot(player, slot1, original);
     }
 }
