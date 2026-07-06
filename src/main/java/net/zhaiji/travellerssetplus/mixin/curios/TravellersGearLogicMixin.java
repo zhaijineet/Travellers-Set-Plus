@@ -5,6 +5,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.zhaiji.travellerssetplus.compat.curios.CuriosMixinUtil;
@@ -29,19 +30,35 @@ public abstract class TravellersGearLogicMixin {
     @WrapOperation(
         method = {
             "travellersBootsStraightAhead",
-            "travellersWingsSidestepCooldownSound",
             "travellersWingsGradualGlide",
             "travellersWingsHighJump",
-            "travellersVestHaste",
-            "tryPerformSidestep",
-            "performDoubleJump"
+            "travellersVestHaste"
         },
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/world/entity/LivingEntity;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
         )
     )
-    private static ItemStack travellerssetplus$getItemBySlot(LivingEntity entity, EquipmentSlot slot, Operation<ItemStack> original) {
+    private static ItemStack travellerssetplus$getItemBySlot$LivingEntity(
+        LivingEntity entity,
+        EquipmentSlot slot,
+        Operation<ItemStack> original
+    ) {
+        return CuriosMixinUtil.wrapGetItemBySlot(entity, slot, original);
+    }
+
+    @WrapOperation(
+        method = {
+            "travellersWingsSidestepCooldownSound",
+            "tryPerformSidestep",
+            "performDoubleJump"
+        },
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/entity/player/Player;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"
+        )
+    )
+    private static ItemStack travellerssetplus$getItemBySlot$Player(Player entity, EquipmentSlot slot, Operation<ItemStack> original) {
         return CuriosMixinUtil.wrapGetItemBySlot(entity, slot, original);
     }
 
